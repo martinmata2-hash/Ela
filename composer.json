@@ -1,0 +1,28 @@
+{
+	"name": "marve/ela",
+	"description": "Simple mvc framework",
+	"type": "library",
+	"license": "MIT",
+	"autoload": {
+		"psr-4": {
+			"Marve\\Ela\\": "src/"
+		}
+	},
+	"authors": [
+		{
+			"name": "martin mata",
+			"email": "martinmata2@gmail.com"
+		}
+	],
+	 "repositories": 
+    [       
+         {
+            "type": "vcs",
+            "url": "https://github.com/Martinmata2-hash/factory"
+        }
+    ],   
+	"minimum-stability": "stable",
+	"require": {
+		"marve/factory": "^1"		
+	}
+}
