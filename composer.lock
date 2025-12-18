@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e3cfbae39ba408254427ffdfc20eeb16",
+    "content-hash": "98f6b96d86f5fe3854b6f71804d34caf",
     "packages": [
         {
             "name": "marve/factory",

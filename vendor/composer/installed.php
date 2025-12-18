@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '011e55217c76ff9f79b3aca0d0c7caa4773c756d',
+        'reference' => 'd31ad15f04d492e244ced4320befec4bb205caf1',
         'name' => 'marve/ela',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '011e55217c76ff9f79b3aca0d0c7caa4773c756d',
+            'reference' => 'd31ad15f04d492e244ced4320befec4bb205caf1',
             'dev_requirement' => false,
         ),
         'marve/factory' => array(
