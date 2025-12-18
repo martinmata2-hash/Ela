@@ -1,0 +1,41 @@
+<?php return array(
+    'root' => array(
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'type' => 'library',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'reference' => '011e55217c76ff9f79b3aca0d0c7caa4773c756d',
+        'name' => 'marve/ela',
+        'dev' => true,
+    ),
+    'versions' => array(
+        'marve/ela' => array(
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'reference' => '011e55217c76ff9f79b3aca0d0c7caa4773c756d',
+            'dev_requirement' => false,
+        ),
+        'marve/factory' => array(
+            'pretty_version' => '1.0',
+            'version' => '1.0.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../marve/factory',
+            'aliases' => array(),
+            'reference' => '4cf33cdd661ed0220fa020aeb8d1dbbb8308e942',
+            'dev_requirement' => false,
+        ),
+        'marve/grid' => array(
+            'pretty_version' => '1.0',
+            'version' => '1.0.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../marve/grid',
+            'aliases' => array(),
+            'reference' => 'dc4f296525b2f818e794f40d2dff54140f5d3a7d',
+            'dev_requirement' => false,
+        ),
+    ),
+);

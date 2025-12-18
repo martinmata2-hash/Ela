@@ -19,10 +19,15 @@
          {
             "type": "vcs",
             "url": "https://github.com/Martinmata2-hash/factory"
-        }
+        },
+		{
+			"type": "vcs",
+            "url": "https://github.com/Martinmata2-hash/GRID"
+		}
     ],   
 	"minimum-stability": "stable",
 	"require": {
-		"marve/factory": "^1"		
+		"marve/factory": "^1",
+		"marve/grid": "^1"
 	}
 }

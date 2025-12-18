@@ -1,0 +1,17 @@
+#!/usr/bin/env php
+<?php
+
+use Marve\Factory\Console\ConsoleApp;
+use Marve\Factory\Console\Kernel;
+
+include "../../../vendor/autoload.php";
+
+$namespace = "Marve\\Factory\\Console\\Commands\\";
+$argv = $_SERVER["argv"]??[];
+
+$application = new ConsoleApp($namespace, $argv);
+$kernel = new Kernel($application);
+
+$status = $kernel->handle();
+
+exit($status);

@@ -1,0 +1,18 @@
+{
+	"name": "marve/factory",
+	"description": "Simple mvc framework",
+	"type": "library",
+	"license": "MIT",
+	"autoload": {
+		"psr-4": {
+			"Marve\\Factory\\": "src/"
+		}
+	},
+	"authors": [
+		{
+			"name": "martin mata",
+			"email": "martinmata2@gmail.com"
+		}
+	],       
+	"minimum-stability": "stable"	
+}

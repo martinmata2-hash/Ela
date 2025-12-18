@@ -1,0 +1,20 @@
+{
+	"name": "marve/grid",
+	"description": "Php Grid",
+	"type": "library",
+	"license": "MIT",
+	"autoload": {
+		"psr-4": {
+			"Marve\\Ela\\Grid\\": "src/"
+		}
+	},
+	"authors": [
+		{
+			"name": "martin mata",
+			"email": "martinmata2@gmail.com"
+		}
+	],
+	
+	"minimum-stability": "stable"	
+
+}

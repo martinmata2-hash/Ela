@@ -1,0 +1,91 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "e3cfbae39ba408254427ffdfc20eeb16",
+    "packages": [
+        {
+            "name": "marve/factory",
+            "version": "1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/martinmata2-hash/Factory.git",
+                "reference": "4cf33cdd661ed0220fa020aeb8d1dbbb8308e942"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/martinmata2-hash/Factory/zipball/4cf33cdd661ed0220fa020aeb8d1dbbb8308e942",
+                "reference": "4cf33cdd661ed0220fa020aeb8d1dbbb8308e942",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Marve\\Factory\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "martin mata",
+                    "email": "martinmata2@gmail.com"
+                }
+            ],
+            "description": "Simple mvc framework",
+            "support": {
+                "source": "https://github.com/martinmata2-hash/Factory/tree/1.0",
+                "issues": "https://github.com/martinmata2-hash/Factory/issues"
+            },
+            "time": "2025-12-17T21:49:23+00:00"
+        },
+        {
+            "name": "marve/grid",
+            "version": "1.0",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:martinmata2-hash/GRID.git",
+                "reference": "dc4f296525b2f818e794f40d2dff54140f5d3a7d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/martinmata2-hash/GRID/zipball/dc4f296525b2f818e794f40d2dff54140f5d3a7d",
+                "reference": "dc4f296525b2f818e794f40d2dff54140f5d3a7d",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Marve\\Ela\\Grid\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "martin mata",
+                    "email": "martinmata2@gmail.com"
+                }
+            ],
+            "description": "Php Grid",
+            "support": {
+                "source": "https://github.com/martinmata2-hash/GRID/tree/1.0",
+                "issues": "https://github.com/martinmata2-hash/GRID/issues"
+            },
+            "time": "2025-12-17T23:14:07+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.2.0"
+}
