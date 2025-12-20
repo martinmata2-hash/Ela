@@ -283,7 +283,7 @@ abstract class Model extends Pagination implements DatabaseInterface, ListInterf
      * @param string $limit
      * @return string
      */
-    public function Select(string $fields, string $table = "0", $selected, $condition, string $ordered = "0", string $limit = "0")
+    public function Select(string $fields, string $table = "0", $selected = "0", $condition = "0", string $ordered = "0", string $limit = "0")
     {
         return $this->options($fields, $table,"id",$selected,$condition,$ordered, $limit) ;       
     }

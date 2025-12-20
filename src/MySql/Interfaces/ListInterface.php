@@ -20,7 +20,7 @@ interface ListInterface
      * @param string $limit
      * @return string
      */
-    public function Select(string $fields, string $table = "0", $selected, $condition, string $ordered = "0", string $limit = "0");
+    public function Select(string $fields, string $table = "0", $selected="0", $condition="0", string $ordered = "0", string $limit = "0");
 
     /**
      * Summary of Json
