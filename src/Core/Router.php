@@ -97,7 +97,12 @@ class Router
             if ($route['uri'] === $uri && $route['method'] === strtoupper($method))
             {
                 if ($route["middleware"] == "pagina" && $route["data"]["pagina"] == "propia")
-                    return require ($route['controller']);
+                {
+                    ob_start();
+                    require ($route['controller']);
+                    $html = ob_get_clean();
+                    return $html;
+                }                    
                 //Middleware debe ser implementado en App/Middleware/Middleware
                 elseif (Middleware::resolve($route["middleware"], $route["data"]))
                 {
