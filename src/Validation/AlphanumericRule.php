@@ -12,7 +12,7 @@ class AlphanumericRule implements RuleInterface
     {
         $this->min = $min;
     }
-    public function passes(mixed $value, Model $modelo = null): bool 
+    public function passes(mixed $value, ?Model $modelo = null): bool 
     {         
         return DirectValidator::User($value,$this->min);
     }

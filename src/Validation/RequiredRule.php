@@ -7,7 +7,7 @@ use Marve\Ela\Validation\Interfaces\RuleInterface;
 class RequiredRule implements RuleInterface
 {
 
-    public function passes(mixed $value, Model $modelo = null): bool 
+    public function passes(mixed $value, ?Model $modelo = null): bool 
     { 
         return isset($value) && trim((string)$value) !== "";
     }

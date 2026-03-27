@@ -12,7 +12,7 @@ class MaxRule implements RuleInterface
     {
         $this->max = $max;
     }
-    public function passes(mixed $value,  Model $model = null): bool 
+    public function passes(mixed $value,  ?Model $model = null): bool 
     { 
         if(is_numeric((float)$value))
             return $value <= $this->max;

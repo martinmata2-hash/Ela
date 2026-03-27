@@ -7,7 +7,7 @@ use Marve\Ela\Validation\Interfaces\RuleInterface;
 class NumberRule implements RuleInterface
 {
 
-    public function passes(mixed $value, Model $modelo = null): bool 
+    public function passes(mixed $value, ?Model $modelo = null): bool 
     { 
         return is_numeric($value);
     }

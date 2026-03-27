@@ -53,7 +53,7 @@ class GenericController extends Controller
     
     protected function get($data)
     {        
-        $this->request = $this->class->get($data->id, $data->campo);        
+        $this->request = $this->class->get($data->id, $data->column);        
         return $this->request;
     }
 

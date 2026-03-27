@@ -11,7 +11,7 @@ class MinRule implements RuleInterface
     {
         $this->min = $min;
     }
-    public function passes(mixed $value,  Model $modelo = null): bool 
+    public function passes(mixed $value,  ?Model $modelo = null): bool 
     { 
         if(is_numeric((float)$value))
             return $value >= $this->min;

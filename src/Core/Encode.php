@@ -126,7 +126,7 @@ class Encode
 
     public static function utf8($string)
     {
-        if (mb_detect_encoding($string, 'UTF-8', true)) 
+        if (!mb_detect_encoding($string, 'UTF-8', true)) 
         {
             $string = mb_convert_encoding($string, 'ISO-8859-1', 'UTF-8');
         }

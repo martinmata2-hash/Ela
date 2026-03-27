@@ -19,10 +19,11 @@ class Validator
         "unique" => UniqueRule::class,
         "alphanumeric" =>AlphanumericRule::class,
         "string"=>StringRule::class,
-        "email"=>EmailRule::class
+        "email"=>EmailRule::class,
+        "uniquenullable"=>UniqueNullableRule::class
     ];
 
-    public static function validate(stdClass $data, array $rules = [], Model $model = null)
+    public static function validate(stdClass $data, array $rules = [], ?Model $model = null)
     {
         $errors = [];
         foreach ($rules as $field => $ruleSet) 
