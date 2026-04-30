@@ -25,10 +25,7 @@ class PrDetalles extends Model
         $this->data_base = $data_base;
         $this->message = array();        
         parent::__construct($data_base, "presupuestodetalles");
-        
-        //Inicar tabla
-        $this->createTable(new PrDetallesD());
-        $this->updateTable();
+                
         //TODO define the rules for adding and editing
         $this->addRules = 
         [

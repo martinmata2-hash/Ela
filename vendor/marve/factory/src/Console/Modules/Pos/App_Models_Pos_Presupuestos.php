@@ -30,10 +30,7 @@ class Presupuestos extends Model
         $this->mensaje = array();        
         parent::__construct($data_base, "presupuestos");
         
-        $this->Detalles = new PrDetalles($data_base);
-        //Inicar tabla
-        $this->createTable(new PresupuestosD());
-        $this->updateTable();
+        $this->Detalles = new PrDetalles($data_base);        
 
         //TODO define the rules for adding and editing
         $this->addRules = 

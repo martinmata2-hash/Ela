@@ -24,10 +24,7 @@ class Pages extends Model implements DatabaseInterface
         $this->data_base = $data_base;
         $this->mensaje = array();        
         parent::__construct($data_base, "archivos");
-        
-        //Inicar tabla
-        $this->createTable(new PagesD());
-        $this->updateTable();
+                
     }
 
     public function remove(string $id, string $campo="ArcID",  int $usuario = 0)

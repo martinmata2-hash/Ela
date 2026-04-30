@@ -31,9 +31,7 @@ class Movimientos extends Model
         parent::__construct($data_base, "salidas");
         
         $this->Detalles = new MoDetalles($this->data_base);
-        //Inicar tabla
-        $this->createTable(new MovimientosD());
-        $this->updateTable();
+        
         //TODO define the rules for adding and editing
         $this->addRules = 
         [

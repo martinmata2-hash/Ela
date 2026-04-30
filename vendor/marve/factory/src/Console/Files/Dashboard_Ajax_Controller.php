@@ -1,6 +1,6 @@
 <?php
 
-use App\Controllers\GenericController;
+use Marve\Ela\Controllers\GenericController;
 use Marve\Ela\Core\Session;
 
 /*  Todas las llamadas de ajax se redireccionan de aqui            */

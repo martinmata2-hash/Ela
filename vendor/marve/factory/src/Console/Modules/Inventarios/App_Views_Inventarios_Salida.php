@@ -59,8 +59,6 @@ if(isset($params["FacID"]))
 
 
 <!--             Modulos             -->
-<script type="module" src="/Dashboard/js/Form/post.js"></script>
-<script type="module" src="/Dashboard/js/Form/validar.js"></script>
 <script type="module" src='/Dashboard/js/Pos/clases/poscompra.js?v1'></script>
 <script type="module" src='/Dashboard/js/Pos/clases/compra.js?v1'></script>   
 

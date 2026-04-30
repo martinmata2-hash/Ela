@@ -28,9 +28,7 @@ class Flujos extends Model
         $this->message = array();        
         parent::__construct($data_base, "flujomonetario");
         
-        //Inicar tabla
-        $this->createTable(new FlujosD());
-        $this->updateTable();
+        //Inicar tabla        
         //TODO define the rules for adding and editing
         $this->addRules = 
         [

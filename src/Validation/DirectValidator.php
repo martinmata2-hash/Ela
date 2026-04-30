@@ -1,6 +1,8 @@
 <?php
 namespace Marve\Ela\Validation;
 
+use Marve\Ela\Core\Encode;
+
 class DirectValidator
 {
     /**
@@ -129,8 +131,7 @@ class DirectValidator
      */
     public static function utf8decode($string)
     {
-        return mb_convert_encoding($string,"UTF-8",mb_detect_encoding($string));
+        return Encode::utf8($string);
     }
     
 }
-

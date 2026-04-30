@@ -33,9 +33,7 @@ class <class> extends Model
         
         $this->Detalles = new <Modelo>($data_base);
         //Inicar tabla
-        $this->createTable(new <classD>());
-        $this->updateTable();
-
+        
         //TODO define the rules for adding and editing
         $this->addRules = 
         [

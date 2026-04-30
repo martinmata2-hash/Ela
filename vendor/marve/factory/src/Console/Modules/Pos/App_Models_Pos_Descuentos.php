@@ -24,9 +24,6 @@ class Descuentos extends Model
         $this->message = array();        
         parent::__construct($data_base, "descuentos");
         
-        //Inicar tabla
-        $this->createTable(new descuentosD());
-        $this->updateTable();
         //TODO define the rules for adding and editing
         $this->addRules = 
         [

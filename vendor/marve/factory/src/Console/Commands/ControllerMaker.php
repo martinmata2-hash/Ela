@@ -10,7 +10,10 @@ class ControllerMaker implements ConsoleInterface
     private $table;
 
     private $className;
+
     private $temp;
+
+    private $classComplete;
 
     public function execute(array $argv = []): int 
     {         
@@ -52,10 +55,16 @@ class ControllerMaker implements ConsoleInterface
     private function controller($folder)
     {
 
+        $this->classComplete = $this->argv["Modelo"];
+        $this->classComplete = str_replace("/","\\",$this->classComplete);
+
+        $this->temp = explode("/",$this->argv["Modelo"]);
+        $this->className = end($this->temp);
+
         echo "Creando clases en folder App/Controllers/".$this->argv["Controller"].".php \n";
         $class = file_get_contents("src/Console/Format/Controller.php");    
-        $buscar = array("<modelo>", "<controller>", "<key>");
-        $reemplazar = array($this->argv["Modelo"],$this->argv["Controller"], $this->argv["id"]);
+        $buscar = array("<classComplete>","<modelo>", "<controller>", "<key>");
+        $reemplazar = array($this->classComplete,$this->className,$this->argv["Controller"], $this->argv["id"]);
         $class = str_replace($buscar, $reemplazar,$class);
         $filename = "$folder/App/Controllers/".$this->argv["Controller"].".php";
         return file_put_contents($filename, $class);

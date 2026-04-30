@@ -33,10 +33,7 @@ class Ventas extends Model
         $this->mensaje = array();        
         parent::__construct($data_base, "ventas");
         
-        $this->Detalles = new VeDetalles($data_base);
-        //Inicar tabla
-        $this->createTable(new VentasD());
-        $this->updateTable();
+        $this->Detalles = new VeDetalles($data_base);        
 
         //TODO define the rules for adding and editing
         $this->addRules = 

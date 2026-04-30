@@ -33,10 +33,7 @@ class Access extends Model implements MiddlewareHandleInterface
         $this->data_base = $data_base;
         $this->mensaje = array();        
         parent::__construct($data_base, "permisos");
-        
-        //Inicar tabla
-        $this->createTable(new AccessD());
-        $this->updateTable();
+                
     }
 
     public function remove(string $id, string $campo="PusID",  int $usuario = 0)

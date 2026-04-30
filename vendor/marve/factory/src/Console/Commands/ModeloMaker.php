@@ -7,11 +7,18 @@ use Marve\Factory\Console\DataHelper;
 class ModeloMaker implements ConsoleInterface
 {       
     private $argv;
+    
     private $datamembers;
+
     private $table;
 
     private $className;
+
     private $temp;
+
+    private $classComplete;
+
+    private $namespace;
 
     public function execute(array $argv = []): int 
     {         
@@ -104,8 +111,12 @@ class ModeloMaker implements ConsoleInterface
 
     private function verify($tabla)
     {
+        $this->classComplete = $this->argv["Modelo"];
+        $this->classComplete = str_replace("/","\\",$this->classComplete);
+
         $this->temp = explode("/",$this->argv["Modelo"]);
         $this->className = end($this->temp);
+        $this->namespace = $this->temp[0];
 
         $HELPER = new DataHelper();
         $this->datamembers = $HELPER->getDataMembers($tabla);
@@ -117,8 +128,8 @@ class ModeloMaker implements ConsoleInterface
         echo "Creando clases en folder App/Models/".$this->argv["Modelo"].".php \n";
         
         $class = file_get_contents("src/Console/Format/Model.php");   
-        $buscar = array("<class>","<classD>","<table>","<tableid>");
-        $reemplazar = array($this->className, $this->className."D", $this->argv["Tabla"],
+        $buscar = array("<class>","<namespace>","<classD>","<table>","<tableid>");
+        $reemplazar = array($this->className,$this->namespace, $this->className."D", $this->argv["Tabla"],
                 $this->argv["id"]);
         $class = str_replace($buscar, $reemplazar,$class);
         $filename = "$folder/App/Models/".$this->argv["Modelo"].".php";
@@ -141,8 +152,8 @@ class ModeloMaker implements ConsoleInterface
 
         echo "Creando clases en folder App/Controllers/".$this->argv["Controller"].".php \n";
         $class = file_get_contents("src/Console/Format/Controller.php");    
-        $buscar = array("<modelo>", "<controller>", "<key>");
-        $reemplazar = array($this->argv["Modelo"],$this->argv["Controller"], $this->argv["id"]);
+        $buscar = array("<classComplete>","<modelo>", "<controller>", "<key>");
+        $reemplazar = array($this->classComplete,$this->className,$this->argv["Controller"], $this->argv["id"]);
         $class = str_replace($buscar, $reemplazar,$class);
         $filename = "$folder/App/Controllers/".$this->argv["Controller"].".php";
         return file_put_contents($filename, $class);

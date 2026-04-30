@@ -32,9 +32,7 @@ class Compras extends Model
         parent::__construct($data_base, "compras");
 
         $this->Detalles = new CoDetalles($data_base);
-        //Inicar tabla
-        $this->createTable(new ComprasD());
-        $this->updateTable();
+        
         //TODO define the rules for adding and editing
         $this->addRules = 
         [

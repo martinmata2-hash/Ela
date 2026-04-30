@@ -31,9 +31,6 @@ class User extends Model
         $this->message = array();        
         parent::__construct($data_base, "usuarios");
         
-        //Inicar tabla
-        $this->createTable(new UserD());
-        $this->updateTable();
         $this->editRules = [
             "UsuRol"=>"required|min:1",
             "UsuUsuario"=>"required|",

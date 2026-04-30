@@ -61,5 +61,17 @@ class DataHelper extends Query
         }
         return $datos;
     }
+
+    public function dropTable($tabla)
+    {
+        $tabla = $this->conection->real_escape_string($tabla);    
+        return $this->conection->query("drop table if exists $tabla");
+    }
+
+    public function createTableFromQuery($query)
+    {
+        $tabla = $this->conection->real_escape_string($query);    
+        return $this->conection->query($query);
+    }
     
 }

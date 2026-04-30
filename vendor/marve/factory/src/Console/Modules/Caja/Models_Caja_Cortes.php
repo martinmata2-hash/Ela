@@ -25,10 +25,7 @@ class Cortes extends Model
         $this->data_base = $data_base;
         $this->message = array();        
         parent::__construct($data_base, "cortes");
-        
-        //Inicar tabla
-        $this->createTable(new CorteD());
-        $this->updateTable();
+                
         //TODO define the rules for adding and editing
         $this->addRules = 
         [

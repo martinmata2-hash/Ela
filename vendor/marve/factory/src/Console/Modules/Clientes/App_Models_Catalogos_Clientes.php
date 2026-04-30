@@ -23,10 +23,7 @@ class Clientes extends Model
         $this->data_base = $data_base;
         $this->message = array();        
         parent::__construct($data_base, "clientes");
-        
-        //Inicar tabla
-        $this->createTable(new ClientesD());
-        $this->updateTable();
+                
         //TODO define the rules for adding and editing
         $this->addRules = 
         [

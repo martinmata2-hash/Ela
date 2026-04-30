@@ -3,7 +3,7 @@ namespace Marve\Factory\Console\Commands;
 use DirectoryIterator;
 use Marve\Factory\Console\ConsoleInterface;
 
-class Migration implements ConsoleInterface
+class DataUpdate implements ConsoleInterface
 {       
     private $argv;
     private $datamembers;
@@ -42,12 +42,12 @@ class Migration implements ConsoleInterface
 
     public static function getName(): string 
     { 
-        return "Factory:Migration";
+        return "Factory:DataUpdate";
     }
 
     public function intructions(): int 
     { 
-        echo "console Factory:Migration All".PHP_EOL;        
+        echo "console Factory:DataUpdate All".PHP_EOL;        
         echo "---------------------------------".PHP_EOL;  
         echo " All : Es requerido".PHP_EOL;        
         echo "---------------------------------".PHP_EOL;

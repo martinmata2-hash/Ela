@@ -50,7 +50,11 @@ class GenericController extends Controller
         $this->request = $this->class->list($data->name, $data->id, $data->selected, ($data->condition)??"0");        
         return $this->request;
     }
-    
+
+	/**
+	 * Summary of get
+	 * @param mixed $data $data->id, $data->column
+	 */
     protected function get($data)
     {        
         $this->request = $this->class->get($data->id, $data->column);        

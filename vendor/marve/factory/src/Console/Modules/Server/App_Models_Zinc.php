@@ -23,9 +23,7 @@ class Zinc extends Model
         $this->message = array();        
         parent::__construct($data_base, "zinc");
         
-        //Inicar tabla
-        $this->createTable(new ZincD());
-        $this->updateTable();
+    
         //TODO define the rules for adding and editing
         $this->addRules = 
         [

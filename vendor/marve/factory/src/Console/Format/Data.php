@@ -3,9 +3,10 @@ namespace App\Models\Data;
 use Marve\Ela\MySql\Interfaces\DataInterface;
 use stdClass;
 
+
 class <classname> extends stdClass implements DataInterface
 {
-    <public> 
+irp< cilbuppublic> ep
     public function __construct($datos = null)
     {
         try

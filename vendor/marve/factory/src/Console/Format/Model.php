@@ -1,5 +1,5 @@
 <?php
-namespace App\Models;
+namespace App\Models\<namespace>;
 
 use App\Models\Data\<classD>;
 use Marve\Ela\Core\Model;
@@ -22,10 +22,7 @@ class <class> extends Model
         $this->data_base = $data_base;
         $this->message = array();        
         parent::__construct($data_base, "<table>");
-        
-        //Inicar tabla
-        $this->createTable(new <classD>());
-        $this->updateTable();
+                
         //TODO define the rules for adding and editing
         $this->addRules = 
         [

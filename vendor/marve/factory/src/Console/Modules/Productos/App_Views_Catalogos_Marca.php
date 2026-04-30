@@ -19,12 +19,6 @@ echo Categorias::MarcasForm();
 
 ?>
 
-
-<script type="module" src="/Dashboard/js/Form/post.js"></script>
-<script type="module" src="/Dashboard/js/Form/validar.js?v1"></script>
-<script type="module" src="/Dashboard/js/Form/forma.js"></script>
-
-
 <script type="module">
 import {Form} from "/Dashboard/js/Form/forma.js";
 
