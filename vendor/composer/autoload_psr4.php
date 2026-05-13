@@ -6,7 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Marve\\Factory\\' => array($vendorDir . '/marve/factory/src'),
-    'Marve\\Ela\\Grid\\' => array($vendorDir . '/marve/grid/src'),
     'Marve\\Ela\\' => array($baseDir . '/src'),
 );

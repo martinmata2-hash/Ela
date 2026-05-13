@@ -9,21 +9,11 @@ class ComposerStaticIniteedeb5a9b798a41626215635f9ba1871
     public static $prefixLengthsPsr4 = array (
         'M' => 
         array (
-            'Marve\\Factory\\' => 14,
-            'Marve\\Ela\\Grid\\' => 15,
             'Marve\\Ela\\' => 10,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Marve\\Factory\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/marve/factory/src',
-        ),
-        'Marve\\Ela\\Grid\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/marve/grid/src',
-        ),
         'Marve\\Ela\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
