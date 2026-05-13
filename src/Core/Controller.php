@@ -11,11 +11,26 @@ define("CONTROLLER_DATOS_VALIDOS",20);
 define("CONTROLLER_DATOS_INVALIDOS",40);
 abstract class Controller
 {
-    
+    /**
+     * Summary of status
+     * @var int 
+     */
     protected $status;
+    /**
+     * Summary of request
+     * @var mixed 
+     */
     protected $request;
+    /**
+     * Summary of message
+     * @var string|array
+     */
     protected $message;
 
+    /**
+     * Summary of class
+     * @var mixed
+     */
     protected $class;
         
     protected function render()
@@ -23,6 +38,12 @@ abstract class Controller
         return json_encode(array("status" => $this->status,"request" => $this->request,"message" => $this->message));
     }
     
+    /**
+     * Summary of run
+     * @param string $metodo
+     * @param array $arguments
+     * @return void
+     */
     public function run($metodo, $arguments) 
     {
         if(method_exists($this,$metodo))
@@ -46,7 +67,12 @@ abstract class Controller
             echo $this->render();
         }
 	}
-    
+    /**
+     * Summary of before
+     * @param mixed $token
+     * @param mixed $data
+     * @return bool
+     */
     protected function before($token, &$data)
     {               
         if( isset($this->status) &&  $this->status == CONTROLLER_DATOS_INVALIDOS)
@@ -75,6 +101,12 @@ abstract class Controller
         }        
     }
     
+    /**
+     * Summary of after
+     * @param mixed $request
+     * @param mixed $message
+     * @return void
+     */
     protected function after($request,$message)
     {
         if(is_array($request))
@@ -113,4 +145,3 @@ abstract class Controller
         
     }
 }
-

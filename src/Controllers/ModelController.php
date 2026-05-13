@@ -13,6 +13,11 @@
         {
             $this->key = $key;
         }            
+
+        /**
+         * Summary of store
+         * @param mixed $data
+         */
         protected function store($data)
         {               
             if(isset($data->{$this->key}) && $this->class->exists($this->key, $data->{$this->key}))
@@ -26,6 +31,10 @@
             return $this->request; 
         }
             
+        /**
+         * Summary of get
+         * @param mixed $data
+         */
         protected function get($data)
         {	    	    
             $this->request =$this->class->get($data->{$this->key}, $this->key);	    

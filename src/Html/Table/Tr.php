@@ -80,7 +80,7 @@ class Tr extends ElementValidation
 
     /**
      * tr dentro de tbody
-     * @param string $txt 
+     * @param string $class 
      * @param string $id 
      * @return $this 
      */

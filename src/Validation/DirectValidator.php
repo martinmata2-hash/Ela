@@ -106,6 +106,7 @@ class DirectValidator
     }
     public static function Barcode($barcode)
     {
+        $barcode = preg_replace('/[^a-zA-Z0-9]/', '', $barcode);
         $barcode = preg_replace("/\s+/", "", $barcode);
         if(ctype_alnum($barcode))
             return true;

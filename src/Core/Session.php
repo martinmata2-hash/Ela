@@ -2,7 +2,7 @@
 
 namespace Marve\Ela\Core;
 
-class Session
+class Session 
 {
              
     public static function set($key, $value)

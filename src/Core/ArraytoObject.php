@@ -43,6 +43,12 @@ class ArraytoObject
         return $class;
     }
 
+    /**
+     * Summary of encuentra
+     * @param mixed $array
+     * @param mixed $nombre
+     * @param mixed $elemento
+     */
     static function encuentra($array, $nombre, $elemento)
     {
         foreach ($array as $key => $v)

@@ -19,15 +19,13 @@ interface DatabaseInterface
     /**
      * Editar column
      * @param string $id
-     * @param string $column
-     * @param string $condition
+     * @param string $column     
      */
     public function edit(stdClass $data, string $id, string $column = "", int $user = 0);
     /**
      * Borrar column
      * @param string $id
-     * @param string $column
-     * @param string $condition
+     * @param string $column    
      */
     public function remove(string $id, string $column, int $user = 0);
     
@@ -36,4 +34,3 @@ interface DatabaseInterface
      */
     public function exists(string $column, string $value);
 }
-

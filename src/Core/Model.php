@@ -196,6 +196,27 @@ abstract class Model extends Pagination implements DatabaseInterface, ListInterf
         }
         else return 0;
     }
+
+    public function storeUnique(stdClass $data)
+    {
+         if(CurrentUser::isUser())
+        {
+            $this->data = $data;
+            if($this->isValid() === true)
+            {               
+                foreach ($data as $key=>$validar) 
+                {
+                    $data->$key = $this->conection->real_escape_string($validar);
+                }
+                $id = $this->replace($this->table, $data);
+                if($id == 0)
+                    $this->message = $this->conection->error;
+                return $id;
+            }
+             else return 0;
+        }
+        else return 0;
+    }
     
     /**
      * 
@@ -303,4 +324,3 @@ abstract class Model extends Pagination implements DatabaseInterface, ListInterf
 
 
 }
-

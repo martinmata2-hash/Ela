@@ -76,7 +76,7 @@ class DateCalendar
     {
         $stampa =  strtotime($date);       
         $months = array ("", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
-        $month_now = date ("n",$stampa); 
+        $month_now = (int)date ("n",$stampa); 
         $date = $months[$month_now];
         return $date;
     }
@@ -96,7 +96,7 @@ class DateCalendar
      * 
      * @param string $date1
      * @param string $date2
-     * @return number
+     * @return float
      */
     static function diffDays($date1,$date2)
     {
