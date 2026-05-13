@@ -13,21 +13,6 @@
 			"name": "martin mata",
 			"email": "martinmata2@gmail.com"
 		}
-	],
-	 "repositories": 
-    [       
-         {
-            "type": "vcs",
-            "url": "https://github.com/Martinmata2-hash/Factory"
-        },
-		{
-			"type": "vcs",
-            "url": "https://github.com/Martinmata2-hash/GRID"
-		}
-    ],   
-	"minimum-stability": "stable",
-	"require": {
-		"marve/factory": "^2",
-		"marve/grid": "^1"
-	}
+	]	
+	"minimum-stability": "stable"
 }
