@@ -27,7 +27,7 @@
     ],   
 	"minimum-stability": "stable",
 	"require": {
-		"marve/factory": "^1",
+		"marve/factory": "^2",
 		"marve/grid": "^1"
 	}
 }
