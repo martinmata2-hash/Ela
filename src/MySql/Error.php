@@ -16,11 +16,11 @@ class Error extends ConectionIndependent
         parent::__construct($data_base);               
         if($this->isConected($data_base))
         {
-            if($resultado = $this->conexion->query("SHOW TABLES LIKE 'errores'"))
+            if($resultado = $this->conection->query("SHOW TABLES LIKE 'errores'"))
             {
                 if($resultado->num_rows == 0)
                 {
-                    $this->conexion->query($this->table());
+                    $this->conection->query($this->table());
                 }
             }
         }
@@ -39,11 +39,11 @@ class Error extends ConectionIndependent
         {
             $query = "INSERT INTO errores VALUES(
 			NULL,
-			'" . $this->conexion->real_escape_string($usuario) . "',
+			'" . $this->conection->real_escape_string($usuario) . "',
 			'" . date("Y-m-d H:i:s") . "',
-			'" . $this->conexion->real_escape_string($donde) . "',
-			'" . $this->conexion->real_escape_string($que) . "')";
-            $this->conexion->query($query);
+			'" . $this->conection->real_escape_string($donde) . "',
+			'" . $this->conection->real_escape_string($que) . "')";
+            $this->conection->query($query);
         }        
     }
     
@@ -66,4 +66,3 @@ class Error extends ConectionIndependent
         return $mysql;
     }
 }
-
