@@ -20,9 +20,9 @@ abstract class QueryAjax extends ConectionIndependent
         parent::__construct($data_base);
         if ($this->isConected($data_base))
         {
-            if ($resultado = $this->conexion->query("SHOW TABLES LIKE 'eliminados'"))
+            if ($resultado = $this->conection->query("SHOW TABLES LIKE 'eliminados'"))
             {
-                if ($resultado->num_rows == 0) $this->conexion->query($this->sqlTable());
+                if ($resultado->num_rows == 0) $this->conection->query($this->sqlTable());
             }
         }        
     }
@@ -39,25 +39,25 @@ abstract class QueryAjax extends ConectionIndependent
         if ($this->selectDB($this->data_base))
         {
             $queryelements = "";
-            $query = "INSERT INTO " . $this->conexion->real_escape_string($table) . " SET ";
+            $query = "INSERT INTO " . $this->conection->real_escape_string($table) . " SET ";
             foreach ($data as $key => $value)
             {
-                $key = $this->conexion->real_escape_string($key);
-                $value = $this->conexion->real_escape_string($value);
+                $key = $this->conection->real_escape_string($key);
+                $value = $this->conection->real_escape_string($value);
                 $queryelements .= "$key = '$value',";
             }
             $queryelements = rtrim($queryelements, ',');
             $query .= $queryelements;
             try
             {
-                $result = $this->conexion->query($query);
+                $result = $this->conection->query($query);
                 if ($result !== FALSE)
                 {
-                    return $this->conexion->insert_id;
+                    return $this->conection->insert_id;
                 }
                 else
                 {
-                    $this->error->report(get_class($this) . __METHOD__, $query . "  " . $this->conexion->error);
+                    $this->error->report(get_class($this) . __METHOD__, $query . "  " . $this->conection->error);
                 }
             }
             catch (\Exception $e)
@@ -84,25 +84,25 @@ abstract class QueryAjax extends ConectionIndependent
         if ($this->selectDB($this->data_base))
         {
             $queryelements = "";
-            $query = "REPLACE INTO " . $this->conexion->real_escape_string($table) . " SET ";
+            $query = "REPLACE INTO " . $this->conection->real_escape_string($table) . " SET ";
             foreach ($data as $key => $value)
             {
-                $key = $this->conexion->real_escape_string($key);
-                $value = $this->conexion->real_escape_string($value);
+                $key = $this->conection->real_escape_string($key);
+                $value = $this->conection->real_escape_string($value);
                 $queryelements .= "$key = '$value',";
             }
             $queryelements = rtrim($queryelements, ',');
             $query .= $queryelements;
             try
             {
-                $result = $this->conexion->query($query);
+                $result = $this->conection->query($query);
                 if ($result !== FALSE)
                 {
-                    return $this->conexion->insert_id;
+                    return $this->conection->insert_id;
                 }
                 else
                 {
-                    $this->error->report(get_class($this) . __METHOD__, $query . "  " . $this->conexion->error, $user);
+                    $this->error->report(get_class($this) . __METHOD__, $query . "  " . $this->conection->error, $user);
                 }
             }
             catch (\Exception $e)
@@ -134,8 +134,8 @@ abstract class QueryAjax extends ConectionIndependent
             $query = "Update " . $table . " SET ";
             foreach ($data as $key => $value)
             {               
-                $key = $this->conexion->real_escape_string($key);
-                $value = $this->conexion->real_escape_string($value);
+                $key = $this->conection->real_escape_string($key);
+                $value = $this->conection->real_escape_string($value);
                 $queryelements .= "$key = '$value',";
             }
             $queryelements = rtrim($queryelements, ',');
@@ -144,7 +144,7 @@ abstract class QueryAjax extends ConectionIndependent
             // $this->error->report("aqui", $query);
             try
             {
-                $result = $this->conexion->query($query);
+                $result = $this->conection->query($query);
                 if ($result !== FALSE)
                 {
                     if(is_numeric($id))
@@ -153,7 +153,7 @@ abstract class QueryAjax extends ConectionIndependent
                 }
                 else
                 {
-                    $this->error->report(get_class($this) . __METHOD__, $query . "  " . $this->conexion->error, $user);
+                    $this->error->report(get_class($this) . __METHOD__, $query . "  " . $this->conection->error, $user);
                 }
             }
             catch (\Exception $e)
@@ -183,7 +183,7 @@ abstract class QueryAjax extends ConectionIndependent
             try
             {
                 $query = "DELETE FROM $table WHERE " . $column . "='$id' ";
-                $result = $this->conexion->query($query);
+                $result = $this->conection->query($query);
                 if ($result !== FALSE)
                 {
                     $data = new stdClass();
@@ -195,7 +195,7 @@ abstract class QueryAjax extends ConectionIndependent
                 }
                 else
                 {
-                    $this->error->report(get_class($this) . __METHOD__, $query . "  " . $this->conexion->error, $user);
+                    $this->error->report(get_class($this) . __METHOD__, $query . "  " . $this->conection->error, $user);
                 }
             }
             catch (\Exception $e)
@@ -224,14 +224,14 @@ abstract class QueryAjax extends ConectionIndependent
             try
             {
                 $query = "DELETE FROM $table WHERE $condition";
-                $result = $this->conexion->query($query);
+                $result = $this->conection->query($query);
                 if ($result !== FALSE)
                 {
                     return 1;
                 }
                 else
                 {
-                    $this->error->report(get_class($this) . __METHOD__, $query . "  " . $this->conexion->error, $user);
+                    $this->error->report(get_class($this) . __METHOD__, $query . "  " . $this->conection->error, $user);
                 }
             }
             catch (\Exception $e)
@@ -268,7 +268,7 @@ abstract class QueryAjax extends ConectionIndependent
                 if ($where != "0") $query .= " WHERE " . $where;
                 if ($orderby != "0") $query .= " ORDER BY " . $orderby;
                 if ($limit != 0) $query .= " Limit " . $limit;
-                $result = $this->conexion->query($query);
+                $result = $this->conection->query($query);
                 //$this->error->report("optons", $query , 1);
                 while ($fila = $result->fetch_object())
                 {
@@ -314,7 +314,7 @@ abstract class QueryAjax extends ConectionIndependent
                 if ($orderby != "0") $query .= " ORDER BY " . $orderby;
                 if ($limit != "0") $query .= " Limit " . $limit;
                 //$this->error->report("aqui", $query);
-                $result = $this->conexion->query($query);
+                $result = $this->conection->query($query);
                 while ($fila = $result->fetch_object())
                 {
                     $data[] = $fila;
@@ -355,14 +355,14 @@ abstract class QueryAjax extends ConectionIndependent
             //$this->error->reporte ( get_class ( $this ) . __METHOD__, $query . " ", $user );
             try
             {
-                $result = $this->conexion->query($query);
+                $result = $this->conection->query($query);
                 if ($result !== FALSE)
                 {
                     return 1;
                 }
                 else
                 {
-                    $this->error->report(get_class($this) . __METHOD__, $query . "  " . $this->conexion->error, $user);
+                    $this->error->report(get_class($this) . __METHOD__, $query . "  " . $this->conection->error, $user);
                 }
             }
             catch (\Exception $e)
@@ -394,7 +394,7 @@ abstract class QueryAjax extends ConectionIndependent
                 if($condition != 0)
                     $query .= " where $condition";
                 //$this->error->reporte("aqui", $query);
-                $result = $this->conexion->query($query);
+                $result = $this->conection->query($query);
                 while ($fila = $result->fetch_object())
                 {
                     $data[] = $fila;
